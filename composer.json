@@ -3,7 +3,8 @@
     "type": "project",
     "require-dev": {
         "phpunit/phpunit": "^11.4",
-        "symfony/finder": "^7.1"
+        "symfony/finder": "^7.1",
+        "doctrine/coding-standard": "^12.0"
     },
     "license": "MIT",
     "autoload": {
@@ -26,5 +27,10 @@
             "name": "Gert de Pagter",
             "email": "backendtea@gmail.com"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }

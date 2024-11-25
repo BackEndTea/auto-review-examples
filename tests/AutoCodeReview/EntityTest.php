@@ -24,7 +24,7 @@ final class EntityTest extends TestCase
         self::assertSame(
             Uuid::class,
             (string) $id->getType(),
-            'Entities should use Uuids as id, "' . $rc->getName() . '" does not.'
+            'Entities should use Uuids as id, "' . $rc->getName() . '" does not.',
         );
     }
 
@@ -36,7 +36,7 @@ final class EntityTest extends TestCase
         self::assertContains(
             TimestampableEntity::class,
             $traitNames,
-            'Entities should be timestampable, "' . $rc->getName() . '" is not.'
+            'Entities should be timestampable, "' . $rc->getName() . '" is not.',
         );
     }
 
@@ -45,7 +45,7 @@ final class EntityTest extends TestCase
     {
         self::assertNotEmpty(
             $rc->getAttributes(HasLifecycleCallbacks::class),
-            'Entities should have lifecycle callbacks, to make the timestamps work, "' . $rc->getName() . '" does not.'
+            'Entities should have lifecycle callbacks, to make the timestamps work, "' . $rc->getName() . '" does not.',
         );
     }
 
@@ -58,9 +58,10 @@ final class EntityTest extends TestCase
 
         foreach ($entities as $entity) {
             $rc = new ReflectionClass('Art\\Entity\\' . $entity->getFilenameWithoutExtension());
-            if($rc->isTrait()) {
+            if ($rc->isTrait()) {
                 continue;
             }
+
             yield $rc->getName() => [$rc];
         }
     }

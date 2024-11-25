@@ -4,3 +4,5 @@
 
 node_modules/
 .phpunit.cache/
+
+.phpcs-cache
